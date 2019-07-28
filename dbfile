@@ -1,0 +1,34 @@
+create table world.Task (task_id varchar(20), parent_id varchar(20), project_id varchar(20), 
+task_desc varchar(20), start_date date, end_date date, priorirty varchar(20), status varchar(20));
+
+
+CREATE TABLE world.ParentTask(
+	Parent_ID int primary key,
+	Parent_Task_Name nvarchar(50) NULL);
+
+
+CREATE TABLE world.Task(
+	Task_ID int  PRIMARY KEY,
+	Parent_ID int NULL,
+	Project_ID int NULL,
+	Task_Name nvarchar(50) NULL,
+	Start_Date DATETIME(6) NULL,
+	End_Date DATETIME(6) NULL,
+	Priority int NULL,
+	Status int NOT NULL);
+    
+    
+    CREATE TABLE world.User(
+	User_ID int primary KEY,
+	First_Name nvarchar(50) NOT NULL,
+	Last_Name nvarchar(50) NOT NULL,
+	Employee_ID nchar(10) NOT NULL,
+	Task_ID int NULL,
+	Project_ID int NULL);
+    
+    CREATE TABLE world.Project(
+	Project_ID int  primary key,
+	Project_Name nvarchar(50) NULL,
+	Start_Date DATETIME(6) NULL,
+	End_Date DATETIME(6) NULL,
+	Priority int NULL)
